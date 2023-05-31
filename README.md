@@ -18,9 +18,9 @@ CloudFormation YAML template for EC2, EBS, S3, RDS auto tagging
 <br><br>
   - CloudTrail 이벤트 로그에서 생성된 리소스의 ID를 추출해 Tagging 진행
 <br><br>
-  1) 대상 이벤트 : RunInstances, CreateVolume, CreateBucket, CreateDBInstance, CreateDBCluster, CreateDBInstanceReadReplica
+  4.1. 대상 이벤트 : RunInstances, CreateVolume, CreateBucket, CreateDBInstance, CreateDBCluster, CreateDBInstanceReadReplica
 <br><br>
-  2) 비고 : 
+  4.2. 비고 : 
 <br>
     - RDS Aurora(MySQL, Postgresql)의 경우를 대비해 리전 클러스터에도 Tag를 할당하기 위해 CreateDBCluster 이벤트도 포함
 <br><br>
