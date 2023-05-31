@@ -15,6 +15,7 @@ CloudFormation YAML template for EC2, EBS, S3, RDS auto tagging
 4. 작동 방식 : 각 리소스(EC2, EBS, RDS, S3) 생성 시 CloudTrail에 찍히는 이벤트가 EventBridge에 감지되면 Lambda를 작동해 Tag를 할당
 <br>
   1) 대상 이벤트 : RunInstances, CreateVolume, CreateBucket, CreateDBInstance, CreateDBCluster, CreateDBInstanceReadReplica
+<br>
   2) 비고 : 
     - RDS Aurora(MySQL, Postgresql)의 경우 리전 클러스터/라이터 인스턴스/리더 인스턴스가 생성되는데, 리전 클러스터에도 Tag를 할당하기 위해 CreateDBCluster 이벤트도 포함
 <br>
@@ -25,6 +26,7 @@ CloudFormation YAML template for EC2, EBS, S3, RDS auto tagging
     - EC2의 경우 한 번에 여러 리소스가 생성되는 경우를 대비해 반복 처리
 <br><br>
 5. 예상 비용 : 
+<br>
   - Lambda가 작동하는 횟수에 비례해 비용이 발생. 즉, 각 리소스가 생성되는 횟수에 비례해 발생 : Lambda Free Tier 고려 필요
 <br>
   - Lambda Log가 CloudWatch Log Group에 수집/저장되는 비용 발생
